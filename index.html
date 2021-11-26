@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<!-- コードはお好きに使って、どうぞ -->
+  </head>
+<body>
+  <b>入力した数字をうまい棒の本数分に変換してくれます。垓？以上の数字入れたらバグるよ知らんけど</b>
+  <style>
+  .diet_form {
+      background: #eaf4ff;
+      padding: 280px 10px;
+     	 position: relative; top:0px; left:200px;
+       font-size:55px;
+
+  }
+  form dl dt {
+      width: 1100px;
+      height: 740px;
+      padding: 0px 0;
+      line-height: 0px;
+      float: left;
+  }
+  form dl dd {
+      padding: 100px 0;
+      margin: 0;
+  }
+  .box {
+      box-sizing: border-box;
+      width: 350px !important;
+      height: 140px !important;
+      margin: 0 !important;
+      padding: 0 10px !important;
+      font-size:100px
+  }
+</style>
+  <form oninput="b=Number(t.value/10);bmi.value=b.toFixed(2);">
+<dl> <dt>
+  <p class="diet_form"> <input class="box" type="number" name="t" step="1"  placeholder="所持金">
+  うまい棒の本数は <output name="bmi"></output>本</p>
+
+  </form>
+
+</body>
+</html>
