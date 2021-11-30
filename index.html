@@ -6,10 +6,13 @@
 <body>
   <b>入力した数字をうまい棒の本数分に変換してくれます。垓？以上の数字入れたらバグるよ知らんけど</b>
   <style>
+
+
+
   .diet_form {
       background: #eaf4ff;
       padding: 280px 10px;
-     	 position: relative; top:0px; left:200px;
+     	 position: relative; top:0px; left:20px;
        font-size:55px;
 
   }
@@ -26,11 +29,11 @@
   }
   .box {
       box-sizing: border-box;
-      width: 350px !important;
+      width: 250px !important;
       height: 140px !important;
       margin: 0 !important;
       padding: 0 10px !important;
-      font-size:100px
+      font-size:50px
   }
 </style>
   <form oninput="b=Number(t.value/10);bmi.value=b.toFixed(2);">
@@ -40,5 +43,11 @@
 
   </form>
 
+  <form oninput="b=Number(u.value*10);bmi.value=b.toFixed();">
+<dl> <dt>
+<p class="diet_form">   欲しいうまい棒の数を入力してね<input class="box" type="number" name="u" step="1"  placeholder="所持金">
+  必要なお金は <output name="bmi"></output>円</p>
+  </form>
 </body>
 </html>
+
