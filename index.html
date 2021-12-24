@@ -4,14 +4,14 @@
     <title>うまい棒換算・ガチャ</title>
 <!-- コードはお好きに使って、どうぞ  制作者:https://twitter.com/Zero87392564-->
   </head>
-<body>
-  <b class="font1">入力した数字をうまい棒の本数分に変換してくれます。<br>垓？以上の数字入れたらバグるよ知らんけど</b>
+<body background="https://pbs.twimg.com/profile_images/1448861032336687107/JBuBse-Q_400x400.png">
+  <b class="font1">入力した数字をうまい棒の本数分に変換してくれます!</b>
   <p class="zp1 class-sans-serif"><label class="open" for="pop-up">使い方！</label></p>
   <input type="checkbox" id="pop-up">
   <div class="overlay">
   	<div class="window">
   		<label class="close" for="pop-up">×</label>
-  		<p class="text">使い方1：所持金をうまい棒の本数分に変換してくれます。1本の値段は10円で計算してます。<br>使い方2：欲しいうまい棒の本数を入れると何円必要か教えてくれます。<br>ガチャ：ランダムでうまい棒がポップアップで出てきます。今んとこ4種類＋はずれが入ってるよ。暇なときに追加していくね！</p>
+  		<p class="text">使い方1：所持金をうまい棒の本数分に変換してくれます。1本の値段は10円で計算してます。<br>使い方2：欲しいうまい棒の本数を入れると何円必要か教えてくれます。<br>使い方３：所持金をうまい棒のカロリーに変換してくれます。一本43kcalで計算してます。<br>ガチャ：ランダムでうまい棒がポップアップで出てきます。今んとこ4種類＋はずれが入ってるよ。暇なときに追加していくね！</p>
   	</div></div>
   <form><input type="button" value="うまい棒ガチャ" onClick="omikuji()"></form>
 
@@ -69,8 +69,9 @@
 
     }
     .text {
-    	font-size: 18px;
+    	font-size: 20px;
     	margin: 0;
+      font-color: #696969;
 
     }
     .close {
@@ -84,11 +85,12 @@
 
 b.font1{
 
-font-size: 35px;
+font-size: 57px;
+color: #c71585;
 }
 
   .diet_form {
-      background: #eaf4ff;
+      background: #EB5ACA;
       padding: 280px 10px;
      	 position: relative; top:0px; left:20px;
        font-size:55px;
@@ -124,9 +126,16 @@ font-size: 35px;
 
   <form oninput="b=Number(u.value*10);bmi.value=b.toFixed();">
 <dl> <dt>
-<p class="diet_form">   欲しいうまい棒の数を入力してね<input class="box" type="number" name="u" step="1"  placeholder="所持金">
+<p class="diet_form">   欲しいうまい棒の数を入力してね<input class="box" type="number" name="u" step="1"  placeholder="本数">
   必要なお金は <output name="bmi"></output>円</p>
   </form>
+
+  <form oninput="b=Number(h.value*43);bmi.value=b.toFixed();">
+<dl> <dt>
+<p class="diet_form">   所持金を入力してね<input class="box" type="number" name="h" step="1"  placeholder="所持金">
+  <br><br>カロリーに換算すると... <output name="bmi"></output>kcal</p>
+  </form>
 <!-- なんだこれは...たまげたなぁ -->
+
 </body>
 </html>
