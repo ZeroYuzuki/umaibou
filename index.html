@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>うまい棒換算・ガチャ</title>
-<!-- コードはお好きに使って、どうぞ  制作者:https://twitter.com/Zero87392564-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   </head>
-<body background="https://pbs.twimg.com/profile_images/1448861032336687107/JBuBse-Q_400x400.png">
-  <b class="font1">入力した数字をうまい棒の本数分に変換してくれます!</b>
-  <p class="zp1 class-sans-serif"><label class="open" for="pop-up">使い方！</label></p>
+<body background="">
+ 
+
   <input type="checkbox" id="pop-up">
   <div class="overlay">
   	<div class="window">
   		<label class="close" for="pop-up">×</label>
-  		<p class="text">使い方1：所持金をうまい棒の本数分に変換してくれます。1本の値段は10円で計算してます。<br>使い方2：欲しいうまい棒の本数を入れると何円必要か教えてくれます。<br>使い方３：所持金をうまい棒のカロリーに変換してくれます。一本43kcalで計算してます。<br>ガチャ：ランダムでうまい棒がポップアップで出てきます。今んとこ4種類＋はずれが入ってるよ。暇なときに追加していくね！</p>
+  		<p class="text">使い方1：所持金をうまい棒の本数分に変換してくれます。1本の値段は12円で計算してます。
+        <br>使い方2：欲しいうまい棒の本数を入れると何円必要か教えてくれます。
+        <br>使い方３：所持金をうまい棒のカロリーに変換してくれます。一本43kcalで計算してます。
+        <br>
+        <br>ガチャ：ランダムでうまい棒がポップアップで出てきます。今んとこ4種類＋はずれが入ってるよ。
+        暇なときに追加していくね！</p>
   	</div></div>
-  <form><input type="button" value="うまい棒ガチャ" onClick="omikuji()"></form>
+
 
   <script type="text/javascript">
   function omikuji() {
@@ -26,116 +33,111 @@
     alert(msg);
   }
   </script>
+ 
 
-  <p>  <a href="https://twitter.com/Zero87392564">制作者</a></p>
-  <style>
+    <section class="hero is-danger">
+      <div class="hero-body">
+        <p class="title">
+          <h1 class="title">
+            <b class="font1">入力した数字をうまい棒の本数分に変換してくれます!</b>
+          </h1>
+        </p>
+        <p class="subtitle">
+          ↓押すと使い方が見れるよ！ <strong>Made with zero</strong>!
+        </p>
+      </div>
+    </section>
 
-    .open {
-    	cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
-    }
-    #pop-up {
-    	display: none; /* label でコントロールするので input は非表示に */
-    }
-    .overlay {
-    	display: none; /* input にチェックが入るまでは非表示に */
-    }
-    #pop-up:checked + .overlay {
-    	display: block;
-    	z-index: 9999;
-    	background-color: #00000070;
-    	position: fixed;
-    	width: 100%;
-    	height: 100vh;
-    	top: 0;
-    	left: 0;
+    <h2 class="title"><p class="zp1 class-sans-serif  "><label class="open" for="pop-up">使い方！</label></p></h2>
+    
+ <form><input class="button" value="うまい棒ガチャ" onClick="omikuji()"></form>
+    
+    <form oninput="b=Number(u.value*12);x.value=b.toFixed();">
+      <dl> <dt>
+      <p class="diet_form">   欲しいうまい棒の数を入力してね<input class="box" type="number" name="u" step="1"  placeholder="本数">
+        必要なお金は <output name="x"></output>円</p>
+        </form>
+    
+      <form oninput="b=Number(t.value/12);x.value=b.toFixed(2);">
+    <dl> <dt>
+      <p class="diet_form"> <input class="box" type="number" name="t" step="1"  placeholder="所持金を入力してね">
+      うまい棒に変換するとぉ... <output name="x"></output>本</p>
+    
+    
+      </form>
+    
+      <form oninput="b=Number(h.value*43);x.value=b.toFixed();">
+    <dl> <dt>
+    <p class="diet_form">   所持金を入力してね<input class="box" type="number" name="h" step="1"  placeholder="所持金">
+      <br><br>カロリーに換算すると... <output name="x"></output>kcal</p>
+      </form>
+    
+      <form oninput="b=Number(u.value*12);x.value=b.toFixed();">
+        <dl> <dt>
+        <p class="diet_form">   ダース換算してくれるよ！<input class="box" type="number" name="u" step="1"  placeholder="本数">
+          結果 <output name="x"></output>個</p>
+          </form>
+    <!-- なんだこれは...たまげたなぁ -->
 
-    	    color:blue;
-    	    background:skyblue;
+  </div>
+</section>
 
-    }
-    .window {
-    	width: 90vw;
-    	max-width: 1000px;
-    	height: 240px;
-    	background-color: #ffffff;
-    	border-radius: 6px;
-    	display: flex;
-    	justify-content: center;
-    	align-items: center;
-    	position: fixed;
-    	top: 50%;
-    	left: 50%;
-    	transform: translate(-50%, -50%);
+<style>
 
-    }
-    .text {
-    	font-size: 20px;
-    	margin: 0;
-      font-color: #696969;
+  .open {
+    cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+  }
+  #pop-up {
+    display: none; /* label でコントロールするので input は非表示に */
+  }
+  .overlay {
+    display: none; /* input にチェックが入るまでは非表示に */
+  }
+  #pop-up:checked + .overlay {
+    display: block;
+    z-index: 9999;
+    background-color: #00000070;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
 
-    }
-    .close {
-    	cursor:pointer;
-    	position: absolute;
-    	top: 4px;
-    	right: 4px;
-    	font-size: 20px;
-    }
-
-
-b.font1{
-
-font-size: 57px;
-color: #c71585;
-}
-
-  .diet_form {
-      background: #EB5ACA;
-      padding: 280px 10px;
-     	 position: relative; top:0px; left:20px;
-       font-size:55px;
+        color:blue;
+        background:skyblue;
 
   }
-  form dl dt {
-      width: 1100px;
-      height: 740px;
-      padding: 0px 0;
-      line-height: 0px;
-      float: left;
+  .window {
+    width: 90vw;
+    max-width: 1000px;
+    height: 240px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
   }
-  form dl dd {
-      padding: 100px 0;
-      margin: 0;
+  .text {
+    font-size: 20px;
+    margin: 0;
+    font-color: #696969;
+
   }
-  .box {
-      box-sizing: border-box;
-      width: 250px !important;
-      height: 140px !important;
-      margin: 0 !important;
-      padding: 0 10px !important;
-      font-size:50px
+  .close {
+    cursor:pointer;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 20px;
   }
 </style>
-  <form oninput="b=Number(t.value/10);bmi.value=b.toFixed(2);">
-<dl> <dt>
-  <p class="diet_form"> <input class="box" type="number" name="t" step="1"  placeholder="所持金">
-  うまい棒の本数は <output name="bmi"></output>本</p>
+ 
 
-
-  </form>
-
-  <form oninput="b=Number(u.value*10);bmi.value=b.toFixed();">
-<dl> <dt>
-<p class="diet_form">   欲しいうまい棒の数を入力してね<input class="box" type="number" name="u" step="1"  placeholder="本数">
-  必要なお金は <output name="bmi"></output>円</p>
-  </form>
-
-  <form oninput="b=Number(h.value*43);bmi.value=b.toFixed();">
-<dl> <dt>
-<p class="diet_form">   所持金を入力してね<input class="box" type="number" name="h" step="1"  placeholder="所持金">
-  <br><br>カロリーに換算すると... <output name="bmi"></output>kcal</p>
-  </form>
-<!-- なんだこれは...たまげたなぁ -->
-
-</body>
+  </body>
 </html>
+
